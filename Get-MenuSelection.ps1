@@ -20,13 +20,13 @@
     get-vm | Get-MenuSelection
 
     Please select from the following options:
-    0. vm-web.abcdef.com
-    1. vm-db.abcdef.com
-    2. vm-web2.abcdef.com
-    3. vmapp2.abcdef.com
-    4. vmdb1.abcdef.com
-    5. vmdb2.abcdef.com
-    6. s2fqaapp.abcdef.com
+    1. vm-web.abcdef.com
+    2. vm-db.abcdef.com
+    3. vm-web2.abcdef.com
+    4. vmapp2.abcdef.com
+    5. vmdb1.abcdef.com
+    6. vmdb2.abcdef.com
+    7. s2fqaapp.abcdef.com
 
     Selection Number: 4
 
