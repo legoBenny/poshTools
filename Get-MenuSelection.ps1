@@ -1,40 +1,40 @@
-<#
-.SYNOPSIS
-    This function takes in an array or object and outputs it as a menu
-    and then returns the selection as the result
-
-.DESCRIPTION
-    This function takes in an array or object and outputs it as a menu
-    and then returns the selection as the result
-
-.NOTES
-    Author: LegoBenny aka Forrest (https://github.com/legoBenny)
-
-.EXAMPLE
-    gci "C:\scripts\VirtScripts\includes" | Get-MenuSelection
-    Get-MenuSelection -MenuItems $(get-datacenter 123456-DC | get-cluster)
-    Get-MenuSelection -MenuItems $(get-process | select -expandProperty ProcessName)
-    Get-MenuSelection -MenuItems @("Apple","Bananna","Cherry") -MenuTitle "My Wonderful Fruit Menu" -MenuMessage "Please enter the number of the fruit you want"
-
-.EXAMPLE
-    get-vm | Get-MenuSelection
-
-    Please select from the following options:
-    1. vm-web.abcdef.com
-    2. vm-db.abcdef.com
-    3. vm-web2.abcdef.com
-    4. vmapp2.abcdef.com
-    5. vmdb1.abcdef.com
-    6. vmdb2.abcdef.com
-    7. s2fqaapp.abcdef.com
-
-    Selection Number: 4
-
-    Name                 PowerState Num CPUs MemoryGB
-    ----                 ---------- -------- --------
-    vmdb1.abcdef.com     PoweredOff 4        16.000
-#>
 function Get-MenuSelection {
+    <#
+    .SYNOPSIS
+        This function takes in an array or object and outputs it as a menu
+        and then returns the selection as the result
+
+    .DESCRIPTION
+        This function takes in an array or object and outputs it as a menu
+        and then returns the selection as the result
+
+    .NOTES
+        Author: LegoBenny aka Forrest (https://github.com/legoBenny)
+
+    .EXAMPLE
+        gci "C:\scripts\VirtScripts\includes" | Get-MenuSelection
+        Get-MenuSelection -MenuItems $(get-datacenter 123456-DC | get-cluster)
+        Get-MenuSelection -MenuItems $(get-process | select -expandProperty ProcessName)
+        Get-MenuSelection -MenuItems @("Apple","Bananna","Cherry") -MenuTitle "My Wonderful Fruit Menu" -MenuMessage "Please enter the number of the fruit you want"
+
+    .EXAMPLE
+        get-vm | Get-MenuSelection
+
+        Please select from the following options:
+        1. vm-web.abcdef.com
+        2. vm-db.abcdef.com
+        3. vm-web2.abcdef.com
+        4. vmapp2.abcdef.com
+        5. vmdb1.abcdef.com
+        6. vmdb2.abcdef.com
+        7. s2fqaapp.abcdef.com
+
+        Selection Number: 4
+
+        Name                 PowerState Num CPUs MemoryGB
+        ----                 ---------- -------- --------
+        vmdb1.abcdef.com     PoweredOff 4        16.000
+    #>
     [cmdletbinding()]
     param (
         [Parameter(Mandatory=$true,ValueFromPipeline=$true)][object[]]$MenuItems,
